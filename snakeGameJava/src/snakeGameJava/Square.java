@@ -1,8 +1,7 @@
 package snakeGameJava;
 
+//En klass för alla fyrkanter i spelet; ormens huvud, kropp och äpplen
 public class Square {
-	//En klass för alla fyrkanter i spelet; ormens huvud, kropp och äpplen
-	
 	public int X;
 	
 	public int getX() { return X; }

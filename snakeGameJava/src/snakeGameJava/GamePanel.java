@@ -98,8 +98,8 @@ public class GamePanel extends JPanel implements ActionListener{
 				}
 			}
 			//Skriver ut score och high score
-			g.setColor(Color.red);
-			g.setFont( new Font("Ink Free",Font.BOLD, 40));
+			g.setColor(Color.white);
+			g.setFont( new Font("Serif",Font.BOLD, 36));
 			FontMetrics metrics = getFontMetrics(g.getFont());
 			g.drawString("Score: "+score, ((SCREEN_WIDTH - metrics.stringWidth("Score: "+score))/2) - 150, g.getFont().getSize());
 			g.drawString("High Score: " + highScore, ((SCREEN_WIDTH - metrics.stringWidth("High Score: " + highScore))/2) + 150, g.getFont().getSize());
@@ -115,7 +115,7 @@ public class GamePanel extends JPanel implements ActionListener{
 		boolean badSpawn;
 		
 		//Funktionen skapar ett slumpmässigt värde för ruta X och Y
-		//Kollar sedan om ormen befinner sig i en av rutorna, funktionen fortsätter då
+		//Kollar sedan om ormen befinner sig i en av rutorna
 		do {
 			badSpawn = false;
 
@@ -175,8 +175,10 @@ public class GamePanel extends JPanel implements ActionListener{
 			newApple();
 			
 			//Spelet blir snabbare och snabbare för varje äpple som äts
-			DELAY--;
-			timer.setDelay(DELAY);
+			if (DELAY > 10) {
+				DELAY--;
+				timer.setDelay(DELAY);
+			}
 		}
 	}
 	
@@ -215,8 +217,8 @@ public class GamePanel extends JPanel implements ActionListener{
 			highScore = score;
 		}
 		
-		g.setColor(Color.red);
-		g.setFont( new Font("Ink Free",Font.BOLD, 40));
+		g.setColor(Color.white);
+		g.setFont( new Font("Serif",Font.BOLD, 40));
 		FontMetrics metrics = getFontMetrics(g.getFont());
 		g.drawString("Score: "+score, (SCREEN_WIDTH - metrics.stringWidth("Score: "+score))/2, g.getFont().getSize());
 		
